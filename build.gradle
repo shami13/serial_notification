@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'ua.com.shami'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile("org.springframework.boot:spring-boot-starter-jdbc")
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.springframework.boot:spring-boot-starter-data-rest'
+	compile "org.telegram:telegrambots:4.1"
+	compile 'mysql:mysql-connector-java'
+	compile("org.liquibase:liquibase-core")
+	runtime("mysql:mysql-connector-java")
+	compile('com.github.xabgesagtx:telegram-spring-boot-starter:0.19')
+	implementation 'com.google.code.gson:gson'
+}
