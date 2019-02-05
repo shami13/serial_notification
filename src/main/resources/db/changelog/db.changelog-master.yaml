@@ -1,4 +1,4 @@
 databaseChangeLog:
-  - changeSet:
-      id: 1
-      author: shami13
+  - include:
+      file: db/changelog/01-create-user-table.xml
+
